@@ -38,11 +38,11 @@ on arch, manjaro:
 sudo pacman -S xsel
 ```
 in your .bashrc or bashrc_profile located in your home directory add this lines:
-
+```
 function qnote {
 bash /full/path/to/qnote.sh $1 $2 $3
 }
-
+```
 the path to the file where all clipboards will be stored is in variable dir.
 You can find variable dir on 9 line in the script. 
 
