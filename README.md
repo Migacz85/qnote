@@ -7,6 +7,7 @@ clipboard to specified flie in dir directory. Without opening a file you can:
 -add a comment to same line
 -add a new line of a text
 -show your saved file. 
+-edit 
 
 ## Functions 
 ```
@@ -15,15 +16,19 @@ show - show your saved notes
 c - adding comment 
 clip - write clip to the file 
 d 1 - delete one line
+edit - open file with nano
 ```
 ## Examples
 ```
 qnote help - show help
 qnote show - cat text from you saved $dir
 qnote c "This is a comment" - add a comment to the file on the same line
+qnote n "This is a comment on new line" - Create a comment on new line 
 qnote clip - Save a clipboard to the file
+qnote clip c "Comment" - this line will add a comment and paste a clipboard
 qnote d 1 - delete last 1 line form a file 
 qnote d 3 - delete last 3 lines from a file
+
 ```
 ## Installation
 

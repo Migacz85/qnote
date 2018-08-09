@@ -29,7 +29,7 @@ fi
 if [[ $1 == "d" ]]
 then
  	head -n -$2 $dir > file.txt.new && mv file.txt.new $dir	
-	cat $dir
+	cat --number $dir
 fi
 
 # add a comment when pasting clipboard
@@ -65,10 +65,12 @@ fi
 
 if [[ $1 == "clip" || $2 == 'clip' || $3 == 'clip' ]]
 then
-		dir=/home/migacz/Coding/Clipboard/clip.note
+        
+        dir=/home/migacz/Coding/Clipboard/clip.note
 		#date >> $dir
-	        xsel -b >> $dir 
-		cat --number $dir
+        printf "\n "  >> $dir
+        xsel -b >> $dir 
+		#cat --number $dir
 		echo " "
 fi
 
