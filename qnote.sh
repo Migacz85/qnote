@@ -4,15 +4,6 @@
 
 dir=/home/migacz/Coding/Clipboard/clip.note
 
-if [[ $1 == "clip" || $2 == 'clip' || $3 == 'clip' ]]
-then
-		dir=/home/migacz/Coding/Clipboard/clip.note
-		#date >> $dir
-	        xsel -b >> $dir 
-		cat $dir
-		echo " "
-fi
-
 
 if [[ $1 == "del" ]]
 then
@@ -31,7 +22,7 @@ then
 	printf "clip - write clip to the file \n"
 	printf "d 1 - delete one line \n"
 	printf "n - comment on new line\n"
-
+    printf "edit - open file in nano \n"
 	        
 fi
 
@@ -45,7 +36,7 @@ fi
 if [[ $1 == "c" ]]
 then
 	printf " -  $2"  >> $dir
-	cat $dir 
+	cat --number $dir 
 	echo "" 
 fi
 
@@ -53,15 +44,32 @@ if [[ $1 == "n" ]]
 then
 	#echo "" >> $dir 
 	printf "\n - $2 "  >> $dir
-	cat $dir
+	cat --number $dir
 	echo "" 			
 fi	
 
 
 if [[ $1 == "show" ]] 
 then
-	cat $dir
+	cat --number $dir
 	echo " "
 
 fi
+
+if [[ $1 == "edit" ]] 
+then
+	nano $dir
+	echo " "
+
+fi
+
+if [[ $1 == "clip" || $2 == 'clip' || $3 == 'clip' ]]
+then
+		dir=/home/migacz/Coding/Clipboard/clip.note
+		#date >> $dir
+	        xsel -b >> $dir 
+		cat --number $dir
+		echo " "
+fi
+
 
